@@ -18,7 +18,6 @@ public class MyDAO {
 
     public Uri DAOInsert(ContentValues contentValues) {
         long rowId=database.insert("student", null, contentValues);
-//        Uri uri=Uri.parse("content://zt.provider2/student/10");//取第10行
         Uri uri=Uri.parse("content://jsy.provider2");
         Uri insertUri=ContentUris.withAppendedId(uri,rowId);
         context.getContentResolver().notifyChange(insertUri,null);
